@@ -20,20 +20,20 @@ public class MysqlTest1 {
         dataSource.setQueryTimeout(5);
         dataSource.setLogAbandoned(true);
 
+        int ct = 0;
 
         try {
             conn = dataSource.getConnection();
 
             conn.setAutoCommit(false);
 
-            String sql = "select sleep(10) ,shop_id from tx_order where id =1";
+            String sql = "select sleep(10) ,id from tx_order where id =74";
             pstmt = conn.prepareStatement(sql);
-
 
 
             rs = pstmt.executeQuery();
             while (rs.next()) {
-                System.out.println(rs.getInt("id") + "   " + rs.getString("id"));
+                System.out.println(rs.getInt("id"));
             }
             conn.commit();
         } catch (Exception e) {
