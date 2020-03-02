@@ -2,13 +2,12 @@ package top.moxingwang.mysql.test;
 
 
 import com.alibaba.druid.pool.DruidDataSource;
-import com.alibaba.druid.util.Utils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class MysqlTest {
+public class MysqlTest1 {
     public static void main(String[] args) {
         Connection conn = null;
         PreparedStatement pstmt = null;
@@ -21,7 +20,7 @@ public class MysqlTest {
         dataSource.setQueryTimeout(5);
         dataSource.setLogAbandoned(true);
 
-        try{
+        try {
             // 获得连接:
             conn = dataSource.getConnection();
             // 编写SQL：
@@ -29,12 +28,12 @@ public class MysqlTest {
             pstmt = conn.prepareStatement(sql);
             // 执行sql:
             rs = pstmt.executeQuery();
-            while(rs.next()){
-                System.out.println(rs.getInt("id")+"   "+rs.getString("id"));
+            while (rs.next()) {
+                System.out.println(rs.getInt("id") + "   " + rs.getString("id"));
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally{
+        } finally {
 
         }
 
