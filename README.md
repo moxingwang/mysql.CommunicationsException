@@ -1,0 +1,2 @@
+# mysql.CommunicationsException
+mysql CommunicationsException
