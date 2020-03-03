@@ -14,7 +14,7 @@ public class MysqlTest1 {
         ResultSet rs = null;
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://db201.dev.rs.com:3306/tx_order?characterEncoding=utf8");
+        dataSource.setUrl("jdbc:mysql://db201.dev.rs.com:3306/tx_order?characterEncoding=utf8&socketTimeout=1000");
         dataSource.setUsername("zyp");
         dataSource.setPassword("zyp_user");
         dataSource.setQueryTimeout(5);
